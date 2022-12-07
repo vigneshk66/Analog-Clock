@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Poppins:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+:root{
+    --color:rgb(255, 0, 13);
+}
+
+body{
+    background-color: rgb(87, 82, 82);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.analog-clock{
+    width: 500px;
+    height: 500px;
+    background-color: aliceblue;
+    background-image: url('../image/back.png');
+    background-size: 500px 400px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 10px ridge var(--color);
+    position: relative;
+    
+}
+.analog-clock::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    
+    
+}  
+.number{
+    --rotate:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color:var(--color);
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    transform: rotate(var(--rotate));
+}
+.number-1{--rotate:30deg;}
+.number-2{--rotate:60deg;}
+.number-3{--rotate:90deg;}
+.number-4{--rotate:120deg;}
+.number-5{--rotate:150deg;}
+.number-6{--rotate:180deg;}
+.number-7{--rotate:210deg;}
+.number-8{--rotate:240deg;}
+.number-9{--rotate:270deg;}
+.number-10{--rotate:300deg;}
+.number-11{--rotate:330deg;}
+
+.needle{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translatex(-50%) rotate(calc(var(--rotation)*1deg));
+    z-index: 8;
+    width: 10px;
+    height: 40%;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+.hrs{
+    background-image:url(../image/hrs1.png);
+    width: 60px;
+    height: 43%;
+}
+.mins{
+    background-image:url(../image/min.png);
+    
+    width: 70px;
+    height: 45%;
+}
+.secs{
+    background-color: red;
+    width: 3px;
+    height: 40%;
+}
